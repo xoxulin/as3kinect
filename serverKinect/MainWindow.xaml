@@ -1,0 +1,46 @@
+﻿<Window x:Class="KinectServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        Title="Kinect server | 0.5 beta"
+        Icon="icon.png"
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        
+        Loaded="Window_Loaded"
+        Closed="Window_Closed">
+    
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Canvas Width="400" Height="300">
+                    <Image Width="400" Height="300" Name="depth"/>
+                    <TextBox FontSize="16" Name="frameRate"
+                             Focusable="False"
+                             BorderThickness="0"
+                             Text="0 fps"
+                             TextAlignment="Right" Canvas.Right="10" Canvas.Bottom="6" Foreground="White" Background="{x:Null}" />
+                    <Button Name="upButton" Content="+" Canvas.Right="10" Canvas.Top="10" Width="20" Click="upButton_Click" />
+                    <Button Name="downButton" Content="-" Canvas.Right="10" Canvas.Top="35" Width="20" Click="downButton_Click" />
+                </Canvas>
+               </StackPanel>
+            <StackPanel>
+                <Canvas Width="400" Height="300" Name="skeleton" Background="Black" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <TextBox Name="log" BorderThickness="1"
+                         IsUndoEnabled="False" IsManipulationEnabled="False"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"                         
+                         Width="400" Height="300"
+                         VerticalScrollBarVisibility="Visible" AutoWordSelection="False" ToolTip="log" TextChanged="log_TextChanged" Background="Black" Foreground="White" TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel>
+                <Image Width="400" Height="300" Name="video"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+    
+</Window>
