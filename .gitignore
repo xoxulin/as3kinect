@@ -1,0 +1,6 @@
+.project
+.settings/*
+.flexLibProperties
+.asctionScriptProperties
+serverKinect/bin/*
+serverKinect/obj/*
